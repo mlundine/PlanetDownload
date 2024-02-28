@@ -3,7 +3,7 @@ Simple scripts to download Planet imagery given an ROI and time constraints. You
 
 # Install requirements
 
-	conda create -n planetdownload python=3.7
+	conda create -n planetdownload python=3.7 -y
 	conda activate planet
 	pip install planet
 
