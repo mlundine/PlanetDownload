@@ -16,3 +16,6 @@ download_planet_imagery_cmd_flags.py accepts cmd line arguments for Planet usern
 
 # download_planet_imagery_user.py 
 download_planet_imagery_user.py accepts user inputs through the cmd line for Planet username and password, path to the geojson ROI, time constraints, and the path to where the images should be saved to.
+
+# to do
+merging output images, ndvi and ndwi calculation, output to coastsat and coastseg dir format
