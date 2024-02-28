@@ -33,8 +33,8 @@ roi = open(ROI)
 roi = json.load(roi)
 
 ## insert temporal constraints YYYY-MM-DD
-time1 = input("Start time (YYYY-MM-DD): ")
-time2 = input("End time (YYYY-MM-DD): ")
+start_time = input("Start time (YYYY-MM-DD): ")
+end_time = input("End time (YYYY-MM-DD): ")
 output_folder = input("Output Directory Path: ")
 
 try:
@@ -81,7 +81,9 @@ def create_combined_filter(roi, time1, time2):
                                               data_range_filter])
     return combined_filter
 
-combined_filter = create_combined_filter(roi,time1,time2)
+combined_filter = create_combined_filter(roi,
+                                         start_time,
+                                         end_time)
     
 async def create_and_download(client, order_detail, directory):
     with planet.reporting.StateBar(state='creating') as reporter:

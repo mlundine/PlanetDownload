@@ -27,6 +27,7 @@ parser.add_argument("-t1", "--time1", help="Start time (YYYY-MM-DD)")
 parser.add_argument("-t2", "--time2", help="End time (YYYY-MM-DD)")
 parser.add_argument("-od", "--output_dir", help="Output Directory")
 args = parser.parse_args()
+print(args)
 
 # Get the user account name and password
 # from the command line and environment,
@@ -96,8 +97,8 @@ def create_combined_filter(roi,
     return combined_filter
 
 combined_filter = create_combined_filter(roi,
-                                         time1,
-                                         time2)
+                                         start_time,
+                                         end_time)
     
 async def create_and_download(client,
                               order_detail,
