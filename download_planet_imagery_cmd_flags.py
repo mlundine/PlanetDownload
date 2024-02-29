@@ -83,16 +83,17 @@ def create_combined_filter(roi,
                                                       datetime(month=month_max,
                                                                day=day_max,
                                                                year=year_max))
-    clear_percent_filter = data_filter.range_filter('clear_percent',
-                                                    None,
-                                                    None,
-                                                    90)
+    
+    ##this filter clips based upon computed cloud cover, probably just avoid using this and filter later on
+##    clear_percent_filter = data_filter.range_filter('clear_percent',
+##                                                    None,
+##                                                    None,
+##                                                    90)
     
     geom_filter = data_filter.geometry_filter(roi)
     
     #combining aoi and time and clear percent filter
     combined_filter = data_filter.and_filter([geom_filter,
-                                              clear_percent_filter,
                                               data_range_filter])
     return combined_filter
 
