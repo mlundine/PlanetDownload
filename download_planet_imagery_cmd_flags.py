@@ -159,7 +159,9 @@ async def main():
             return ids_by_date
         
         ids_by_date = get_ids_by_date(item_list)
-        ids = ids_by_date[list(unique_acquired_dates)[0]]
+        ids = [ids_by_date[j] for j in list(unique_acquired_dates)]
+        ids = [j for i in ids for j in i]
+        
        
         cl = sess.client('orders')
         request = planet.order_request.build_request(name=order_name,
